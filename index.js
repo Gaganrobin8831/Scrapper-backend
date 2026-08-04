@@ -1,11 +1,12 @@
 import app from "./src/server/server.js";
 import sendQueryInput from "./src/router/router.js";
 import runScraper from "./src/scraper/scraper.js";
-
+import cors from 'cors'
 import dotenv from 'dotenv';
 dotenv.config({
     path:"./.env"
 });
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
