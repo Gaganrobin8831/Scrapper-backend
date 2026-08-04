@@ -32,9 +32,7 @@ RUN apt-get update && apt-get install -y \
 # Copy package files and install dependencies
 COPY package*.json ./
 
-# Disable Puppeteer's Chromium download (optional if you're using system Chrome)
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-
+# Let Puppeteer download the Chromium binary required for browser automation.
 RUN npm install
 
 # Copy source files

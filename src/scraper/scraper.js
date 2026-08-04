@@ -16,9 +16,12 @@ async function runScraper(searchQueryInput) {
     const outputFile = `${sanitizedQuery}.json`;
 
     const browser = await puppeteer.launch({
-        headless: false,
-        executablePath: '/usr/bin/google-chrome', // or /usr/bin/chromium-browser
-        args: ['--no-sandbox', '--disable-dev-shm-usage']
+        headless: true,
+        args: [
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu'
+        ]
     });
 
     try {
